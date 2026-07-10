@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomyGo - Find Rooms & Roommates</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header class="top-bar">
+  <button onclick="history.back()">← Go Back</button>
+  <a href="../../index.html" class="home-link">Home</a>
+</header>
+
+<!-- LOGIN POPUP MODAL -->
+<div id="authModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <!-- LOGIN FORM -->
+        <div id="loginBox">
+            <h2>Welcome Back</h2>
+
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+
+            <button onclick="loginUser()">Login</button>
+
+            <p onclick="showRegister()">Don't have an account? <b>Register</b></p>
+        </div>
+
+        <!-- REGISTER FORM -->
+        <div id="registerBox">
+            <h2>Create Account</h2>
+
+            <input type="text" placeholder="Full Name">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+
+            <button onclick="registerUser()">Register</button>
+
+            <p onclick="showLogin()">Already have an account? <b>Login</b></p>
+        </div>
+
+    </div>
+</div>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">RoomyGo</div>
+
+    <nav id="navMenu">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#how">How it Works</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" class="btn" onclick="openModal()">Sign In</a>
+    </nav>
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Find Your Perfect Room & Roommate</h1>
+    <p>Swipe. Match. Move In. RoomyGo makes housing simple and safe.</p>
+
+    <!-- CONNECTED TO LOGIN PAGE -->
+    <button onclick="openModal()">Get Started</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2>About RoomyGo</h2>
+    <p>
+        RoomyGo helps students and professionals find rooms and roommates easily using smart matching and swipe-based discovery.
+    </p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="section dark">
+    <h2>How It Works</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>1. Create Account</h3>
+            <p>Sign up and build your profile.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. Set Preferences</h3>
+            <p>Choose budget, location, lifestyle.</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Swipe & Match</h3>
+            <p>Like or skip rooms and roommates.</p>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="section">
+    <h2>What Users Say</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <p>"Found my roommate in 2 days. Super easy!"</p>
+            <h4>- Sarah</h4>
+        </div>
+
+        <div class="card">
+            <p>"Much better than other rental sites."</p>
+            <h4>- Jason</h4>
+        </div>
+
+        <div class="card">
+            <p>"Safe, clean and very intuitive design."</p>
+            <h4>- Amina</h4>
+        </div>
+
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section dark">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-container">
+
+        <div class="faq">
+            <h3 onclick="toggleFAQ(this)">Is RoomyGo free?</h3>
+            <p>No, RoomyGo is completely free to use for finding rooms and roommates.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleFAQ(this)">Is it safe?</h3>
+            <p>Yes, we use verification and secure messaging for safety.</p>
+        </div>
+
+        <div class="faq">
+            <h3 onclick="toggleFAQ(this)">How does matching work?</h3>
+            <p>You swipe right to like and left to skip. Matches allow messaging.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 RoomyGo. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

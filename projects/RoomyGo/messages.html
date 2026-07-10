@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - RoomyGo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header class="top-bar">
+  <button onclick="history.back()">← Go Back</button>
+  <a href="../../index.html" class="home-link">Home</a>
+</header>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">RoomyGo</div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="swipe.html">Swipe</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="index.html" class="btn">Logout</a>
+    </nav>
+</header>
+
+<!-- PAGE -->
+<section class="msg-page">
+
+    <!-- CHAT LIST -->
+    <div class="chat-list">
+        <h3>Chats</h3>
+        <div id="chatUsers"></div>
+    </div>
+
+    <!-- CHAT BOX -->
+    <div class="chat-box">
+
+        <h3 id="chatTitle">Select a chat</h3>
+
+        <div id="chatMessages" class="messages"></div>
+
+        <div class="input-box">
+            <input type="text" id="msgInput" placeholder="Type message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+let currentChat = "";
+
+// SAMPLE USERS (from favourites)
+document.addEventListener("DOMContentLoaded", function () {
+    loadChatUsers();
+});
+
+// LOAD CHAT LIST
+function loadChatUsers() {
+
+    let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+    let container = document.getElementById("chatUsers");
+    container.innerHTML = "";
+
+    if (favs.length === 0) {
+        container.innerHTML = "<p>No chats yet</p>";
+        return;
+    }
+
+    favs.forEach(item => {
+
+        let name = item.name.split(",")[0];
+
+        let div = document.createElement("div");
+        div.className = "chat-user";
+        div.innerText = name;
+
+        div.onclick = () => openChat(name);
+
+        container.appendChild(div);
+    });
+}
+
+// OPEN CHAT
+function openChat(name) {
+
+    currentChat = name;
+
+    document.getElementById("chatTitle").innerText = "Chat with " + name;
+
+    loadMessages();
+}
+
+// LOAD MESSAGES
+function loadMessages() {
+
+    let msgs = JSON.parse(localStorage.getItem("messages_" + currentChat)) || [];
+
+    let box = document.getElementById("chatMessages");
+    box.innerHTML = "";
+
+    msgs.forEach(m => {
+
+        let div = document.createElement("div");
+        div.className = m.sender === "me" ? "msg me" : "msg them";
+        div.innerText = m.text;
+
+        box.appendChild(div);
+    });
+}
+
+// SEND MESSAGE
+function sendMessage() {
+
+    let input = document.getElementById("msgInput");
+
+    if (!input) {
+        console.error("msgInput not found");
+        return;
+    }
+
+    let text = input.value.trim();
+
+    if (text === "") {
+        alert("Type a message first");
+        return;
+    }
+
+    if (!currentChat) {
+        alert("Select a chat first");
+        return;
+    }
+
+    let key = "messages_" + currentChat;
+
+    let msgs = JSON.parse(localStorage.getItem(key)) || [];
+
+    msgs.push({
+        sender: "me",
+        text: text
+    });
+
+    localStorage.setItem(key, JSON.stringify(msgs));
+
+    input.value = "";
+
+    loadMessages();
+}
+</script>
+
+</body>
+</html>

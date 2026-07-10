@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourites - RoomyGo</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header class="top-bar">
+  <button onclick="history.back()">← Go Back</button>
+  <a href="../../index.html" class="home-link">Home</a>
+</header>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">RoomyGo</div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="swipe.html">Swipe</a>
+        <a href="index.html" class="btn">Logout</a>
+    </nav>
+</header>
+
+<!-- PAGE TITLE -->
+<section class="fav-hero">
+    <h1>Your Favourites ❤️</h1>
+    <p>All your saved rooms and roommates</p>
+</section>
+
+<!-- FAVOURITES LIST -->
+<section id="favContainer" class="fav-container"></section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    loadFavourites();
+});
+
+// LOAD FAVOURITES
+function loadFavourites() {
+
+    let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+    let container = document.getElementById("favContainer");
+    container.innerHTML = "";
+
+    if (favs.length === 0) {
+        container.innerHTML = "<h3>No favourites yet</h3>";
+        return;
+    }
+
+    favs.forEach((item, index) => {
+
+        let card = document.createElement("div");
+        card.className = "fav-card";
+
+        card.innerHTML = `
+            <h3>${item.name}</h3>
+            <p>${item.details}</p>
+
+            <button onclick="removeFav(${index})">Remove</button>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// REMOVE FAVOURITE
+function removeFav(index) {
+
+    let favs = JSON.parse(localStorage.getItem("favs")) || [];
+
+    favs.splice(index, 1);
+
+    localStorage.setItem("favs", JSON.stringify(favs));
+
+    loadFavourites();
+}
+</script>
+
+</body>
+</html>

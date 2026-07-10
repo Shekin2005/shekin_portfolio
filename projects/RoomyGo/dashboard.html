@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoomyGo Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header class="top-bar">
+  <button onclick="history.back()">← Go Back</button>
+  <a href="../../index.html" class="home-link">Home</a>
+</header>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="logo">RoomyGo</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="messages.html">Messages</a>
+        <a href="index.html" class="btn">Logout</a>
+    </nav>
+    <div class="menu" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- DASHBOARD HERO -->
+<section class="dash-hero">
+    <h1>Welcome to RoomyGo</h1>
+    <p>Find rooms, roommates, or list your own place in seconds.</p>
+</section>
+
+<!-- MAIN OPTIONS -->
+<section class="dash-container">
+
+    <div class="dash-card" onclick="openFilter('room')">
+        <h2>🏠 Find a Room</h2>
+        <p>Browse available rooms near you.</p>
+    </div>
+
+    <div class="dash-card" onclick="openFilter('roommate')">
+        <h2>👥 Find a Roommate</h2>
+        <p>Match with compatible people.</p>
+    </div>
+
+    <div class="dash-card" onclick="openAd('room')">
+        <h2>📢 Advertise a Room</h2>
+        <p>Post your available room.</p>
+    </div>
+
+    <div class="dash-card" onclick="openAd('roommate')">
+        <h2>📢 Advertise a Roommate</h2>
+        <p>Post for roommate.</p>
+    </div>
+
+</section>
+
+<!-- PROFILE SECTION -->
+<section class="profile-box">
+    <h2>Your Profile</h2>
+
+    <div class="profile-card">
+        <div class="avatar"></div>
+
+        <div>
+            <h3 id="nameDisplay">John Doe</h3>
+            <p id="roleDisplay">Student | Halifax</p>
+            <p id="budgetDisplay">Budget: $800 - $1200</p>
+        </div>
+    </div>
+
+    <button onclick="openProfileEdit()">Edit Profile</button>
+</section>
+
+<!-- EDIT PROFILE POPUP -->
+<div id="profileModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeProfileEdit()">&times;</span>
+
+        <h2>Edit Profile</h2>
+
+        <input type="text" id="editName" placeholder="Full Name">
+        <input type="text" id="editRole" placeholder="Role & Location">
+        <input type="text" id="editBudget" placeholder="Budget">
+
+        <button onclick="saveProfile()">Save Changes</button>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 RoomyGo</p>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- FILTER POPUP -->
+<div id="filterModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeFilter()">&times;</span>
+
+        <h2 id="filterTitle">Filters</h2>
+
+        <input type="text" placeholder="Location">
+        <input type="text" placeholder="Budget">
+        <input type="text" placeholder="Move-in Date">
+        <input type="text" placeholder="Lifestyle">
+
+        <button onclick="applyFilter()">Apply Filters</button>
+
+    </div>
+</div>
+
+<!-- ADVERTISE POPUP -->
+<div id="adModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeAd()">&times;</span>
+
+        <h2>Create Advertisement</h2>
+
+        <input type="text" id="adTitle" placeholder="Title (e.g. Nice Room Downtown)">
+        
+        <select id="adType">
+            <option value="room">Room</option>
+            <option value="roommate">Roommate</option>
+        </select>
+
+        <input type="text" id="adLocation" placeholder="Location">
+        <input type="number" id="adBudget" placeholder="Budget">
+        <input type="text" id="adLifestyle" placeholder="Lifestyle">
+
+        <button onclick="postAd()">Post Ad</button>
+
+    </div>
+</div>
+
+</body>
+</html>

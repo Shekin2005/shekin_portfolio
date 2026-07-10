@@ -1,0 +1,551 @@
+.top-bar {
+  position: sticky;
+  top: 0;
+  background-color: #aca9cc;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar button {
+  background-color: #F7D6E0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-link {
+  text-decoration-color: rgb(250, 250, 250);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Keep it white after click */
+.home-link:visited {
+  color: #741d46;
+}
+
+/* Optional hover effect */
+.home-link:hover {
+  color: #F7D6E0;
+}
+/* INDEX*/
+/* COLORS */
+:root {
+    --pink: #F7D6E0;
+    --pink-dark: #F2B8C6;
+    --navy: #1F3A5F;
+    --white: #ffffff;
+    --black: #222;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: var(--navy);
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--pink);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav .btn {
+    background: var(--pink);
+    color: var(--navy);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+/* MOBILE MENU */
+.menu {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, var(--pink), var(--white));
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: var(--navy);
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    border: none;
+    background: var(--navy);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section.dark {
+    background: var(--pink);
+}
+
+.section h2 {
+    margin-bottom: 20px;
+    color: var(--navy);
+}
+
+/* GRID CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--navy);
+    color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background: var(--navy);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .menu {
+        display: block;
+    }
+}
+
+/* TESTIMONIAL TEXT */
+.card h4 {
+    margin-top: 10px;
+    color: var(--navy);
+}
+
+/* FAQ */
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.faq {
+    background: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.faq h3 {
+    color: var(--navy);
+}
+
+.faq p {
+    display: none;
+    margin-top: 10px;
+    color: var(--black);
+}
+
+/* MODAL BACKGROUND */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+/* MODAL BOX */
+.modal-content {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* CLOSE BUTTON */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* INPUTS */
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* BUTTON */
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* SWITCH TEXT */
+.modal-content p {
+    margin-top: 10px;
+    cursor: pointer;
+    color: var(--navy);
+}
+
+/* HIDE REGISTER BY DEFAULT */
+#registerBox {
+    display: none;
+}
+
+/* DASHBOARD HERO */
+.dash-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--pink), var(--white));
+}
+
+.dash-hero h1 {
+    color: var(--navy);
+    font-size: 36px;
+}
+
+/* DASHBOARD GRID */
+.dash-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* DASH CARDS */
+.dash-card {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.dash-card:hover {
+    transform: translateY(-5px);
+    background: var(--pink);
+}
+
+/* PROFILE SECTION */
+.profile-box {
+    text-align: center;
+    padding: 40px;
+    background: var(--pink);
+}
+
+.profile-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--navy);
+}
+
+/* BUTTON */
+.profile-box button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--navy);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* PROFILE MODAL REUSE */
+#profileModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+#profileModal .modal-content {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#profileModal input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+#profileModal button {
+    width: 100%;
+    padding: 10px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+/* MODAL (reuse same style if already exists) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    width: 350px;
+    text-align: center;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+}
+
+/* FAVOURITES PAGE */
+.fav-hero {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #F7D6E0, white);
+}
+
+.fav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+}
+
+/* FAV CARD */
+.fav-card {
+    width: 320px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.fav-card button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* MESSAGES PAGE */
+.msg-page {
+    display: flex;
+    height: 90vh;
+}
+
+/* CHAT LIST */
+.chat-list {
+    width: 30%;
+    background: #F7D6E0;
+    padding: 20px;
+}
+
+.chat-user {
+    padding: 10px;
+    background: white;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* CHAT BOX */
+.chat-box {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.input-box {
+    display: flex;
+    padding: 10px;
+}
+
+.input-box input {
+    flex: 1;
+    padding: 10px;
+}
+
+.input-box button {
+    padding: 10px;
+    background: #1F3A5F;
+    color: white;
+    border: none;
+}
+
+/* MESSAGE BUBBLES */
+.msg {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 60%;
+}
+
+.me {
+    background: #1F3A5F;
+    color: white;
+    margin-left: auto;
+}
+
+.them {
+    background: #F7D6E0;
+}
