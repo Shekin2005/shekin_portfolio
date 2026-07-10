@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META SETTINGS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Shekin David Raj Portfolio</title>
+
+    <!-- MAIN STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FONT AWESOME ICONS -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================
+        HEADER SECTION
+========================= -->
+<header class="header">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <h2><span>SR</span> SHEKIN DAVID RAJ</h2>
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav-links">
+        <a href="#" onclick="openPopup('aboutPopup')">About</a>
+        <a href="#" onclick="openProjects()">Projects</a>
+        <a href="#" onclick="openPopup('skillsPopup')">Skills</a>
+        <a href="#" onclick="openPopup('educationPopup')">Education</a>
+        <a href="#" onclick="openContact()">Contact</a>
+    </nav>
+
+    <!-- MOBILE MENU ICON -->
+    <div class="menu-icon">
+        ☰
+    </div>
+
+</header>
+
+<!-- =========================
+        MOBILE MENU
+========================= -->
+<div class="mobile-menu" id="mobileMenu">
+
+    <span class="close" onclick="closeMenu()">&times;</span>
+
+    <a href="#" onclick="openPopup('aboutPopup')">About</a>
+    <a href="#" onclick="openProjects()">Projects</a>
+    <a href="#" onclick="openPopup('skillsPopup')">Skills</a>
+    <a href="#" onclick="openPopup('educationPopup')">Education</a>
+    <a href="#" onclick="openContact()">Contact</a>
+
+</div>
+
+<!-- =========================
+        HERO SECTION
+========================= -->
+<section class="hero">
+
+    <!-- PROFILE IMAGE -->
+    <img src="full pic.jpeg" alt="Profile Image">
+
+    <!-- HERO TEXT -->
+    <div class="hero-right">
+        <div class="hero-text-box">
+            <h1>Computer Science   </h1>
+        </div>
+    </div>
+
+</section>
+
+<!-- =========================
+        ABOUT POPUP MODAL
+========================= -->
+<div class="popup" id="aboutPopup">
+
+    <div class="popup-content">
+
+        <span class="popup-close" onclick="closePopup('aboutPopup')">
+            &times;
+        </span>
+
+        <h2>About Me</h2>
+
+        <p>
+            I am Shekin David Raj, a Computer Science student
+            passionate about full-stack development,
+            AI, and software engineering.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="popup" id="educationPopup">
+
+    <div class="popup-content">
+
+        <span class="popup-close" onclick="closePopup('educationPopup')">
+            &times;
+        </span>
+
+        <h2>education</h2>
+
+        <p>
+            I am Shekin David Raj, a Computer Science student
+            passionate about full-stack development,
+            AI, and software engineering.
+        </p>
+
+    </div>
+
+</div>
+
+<!-- =========================
+        SKILLS POPUP MODAL
+========================= -->
+
+<div class="popup" id="skillsPopup">
+    <div class="popup-content">
+
+        <!-- CLOSE BUTTON -->
+        <span class="popup-close" onclick="closePopup('skillsPopup')">
+            &times;
+        </span>
+
+        <!-- SCROLL AREA ONLY -->
+        <div class="popup-scroll">
+            <section class="skills-popup-section">
+
+                <h2>Skills</h2>
+
+                <div class="skill-container">
+                    <!-- PROGRAMMING -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-programming')">
+                        Programming Languages
+                        <div class="skill-popup" id="popup-programming">
+                            <h4>Programming Languages</h4>
+                            <p>
+                                Java, Python, HTML, CSS, JavaScript.
+                                Used for building web applications,
+                                software systems, automation tasks,
+                                and problem-solving projects.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- DATA STRUCTURES -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-dsa')">
+                        Data Structures & Algorithms
+                        <div class="skill-popup" id="popup-dsa">
+                            <h4>Data Structures & Algorithms</h4>
+                            <p>
+                                Linked Lists, Graphs (adjacency list &
+                                matrix), Skip Lists, recursion,
+                                DFS, BFS traversal.
+
+                                Used for efficient problem solving
+                                and optimized code design.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- SOFTWARE DEVELOPMENT -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-software')">
+                        Software Development
+                        <div class="skill-popup" id="popup-software">
+                            <h4>Software Development</h4>
+                            <p>
+                                Java GUI development, file handling,
+                                debugging, optimization, testing,
+                                and documentation.
+
+                                Used for building structured and
+                                maintainable applications.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- WEB DEVELOPMENT -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-web')">
+                        Web Development
+                        <div class="skill-popup" id="popup-web">
+                            <h4>Web Development</h4>
+                            <p>
+                                Responsive websites, portfolio design,
+                                HTML/CSS styling, JavaScript interactions,
+                                and front-end project development.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- AI MACHINE LEARNING -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-ai')">
+                        AI & Machine Learning
+                        <div class="skill-popup" id="popup-ai">
+                            <h4>AI & Machine Learning</h4>
+                            <p>
+                                Classifier evaluation,
+                                error analysis,
+                                AI-powered automation insights,
+                                and AI applications in games.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- GAME DEVELOPMENT -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-game')">
+                        Game Development
+                        <div class="skill-popup" id="popup-game">
+                            <h4>Game Development</h4>
+                            <p>
+                                Game logic, AI behavior design,
+                                basic 2D/3D game mechanics,
+                                and interactive gameplay systems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- TOOLS -->
+                    <div class="skill-card" onclick="toggleSkillPopup('popup-tools')">
+                        Tools & Technologies
+                        <div class="skill-popup" id="popup-tools">
+                            <h4>Tools & Technologies</h4>
+                            <p>
+                                VS Code, Live Server, GitHub,
+                                Weka, PDF and image integration
+                                for web projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<!-- PROJECTS PANEL -->
+<div class="projects-panel" id="projectsPanel">
+
+    <div class="projects-header">
+
+        <h2>MY WORKS</h2>
+
+        <span class="projects-close" onclick="closeProjects()">
+            &times;
+        </span>
+
+    </div>
+
+    <div class="projects-content">
+
+        <!-- PROJECT 1 -->
+        <button class="accordion-btn">Enactus FoodShare</button>
+        <div class="accordion-content">
+            <p>Social innovation and entrepreneurship project.</p>
+            <a href="projects/enactus/Enactus FoodShare — Kitchen Management.html"
+               target="_blank"
+               class="project-btn">View Project</a>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <button class="accordion-btn">Explore 360</button>
+        <div class="accordion-content">
+            <p>Tourism platform for Wolfville.</p>
+            <a href="projects/explore_360/explore_360/Front-end/home.html"
+               target="_blank"
+               class="project-btn">View Project</a>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <button class="accordion-btn">RoomyGo</button>
+        <div class="accordion-content">
+            <p>Student accommodation platform.</p>
+            <a href="projects/RoomyGo/index.html"
+               target="_blank"
+               class="project-btn">View Project</a>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <button class="accordion-btn">Chapel Works</button>
+        <div class="accordion-content">
+            <ul>
+                <li>
+                    <a href="projects/chapel/bahai_faith/Baha'i faith 2.pdf" target="_blank">
+                        Baha'i Faith Poster
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects/chapel/captain_leonard_parkinson/Copy of Captain Leonard Parkinson Final Poster For JCANS.pdf"
+                       target="_blank">
+                        Captain Leonard Parkinson Poster
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects/chapel/george_symonds/George Symonds.pdf" target="_blank">
+                        George Symonds Poster
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+        ABOUT SECTION
+========================= -->
+<section id="about" class="about">
+
+    <h2>What Defines Me</h2>
+
+    <p>
+        I am Shekin David Raj, a passionate computer science student with a strong foundation in programming, software development, and problem-solving. I enjoy applying theoretical knowledge to practical projects, from data structures and algorithms to web development, AI, and game development. I am particularly interested in creating AI-powered applications and games that combine logic, interactivity, and user experience. I strive to write clean, efficient code while exploring emerging technologies that can solve real-world problems.
+    </p>
+
+</section>
+
+<!-- =========================
+        EDUCATION SECTION
+========================= -->
+<section id="education" class="education">
+
+    <h2>Education</h2>
+
+    <div class="edu-box">
+        <h3>Bachelor of Computer Science</h3>
+
+        <p>
+            Focused on software development, data structures,
+            artificial intelligence, and full-stack web technologies.
+        </p>
+    </div>
+
+</section>
+
+<!-- =========================
+        SKILLS SECTION
+========================= -->
+<!-- SKILLS SECTION -->
+<section id="skills" class="skills">
+
+    <h2>Skills</h2>
+
+    <div class="skill-container">
+
+        <!-- PROGRAMMING -->
+        <div class="skill-card" onclick="toggleSkillPopup('programming')">
+
+            Programming Languages
+
+            <div class="skill-popup" id="programming">
+                <h4>Programming Languages</h4>
+                <p>
+                    Java, Python, HTML, CSS, JavaScript.  
+                    Used for building web applications, software systems,
+                    automation tasks, and problem-solving projects.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- DSA -->
+        <div class="skill-card" onclick="toggleSkillPopup('dsa')">
+
+            Data Structures & Algorithms
+
+            <div class="skill-popup" id="dsa">
+                <h4>Data Structures & Algorithms</h4>
+                <p>
+                    Linked Lists, Graphs (adjacency list & matrix),
+                    Skip Lists, recursion, DFS, BFS traversal.
+                    Used for efficient problem solving and optimized code design.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- SOFTWARE DEV -->
+        <div class="skill-card" onclick="toggleSkillPopup('software')">
+
+            Software Development
+
+            <div class="skill-popup" id="software">
+                <h4>Software Development</h4>
+                <p>
+                    Java GUI development, file handling (I/O),
+                    debugging, optimization, testing, and documentation.
+                    Used for building structured and maintainable applications.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- WEB DEV -->
+        <div class="skill-card" onclick="toggleSkillPopup('webdev')">
+
+            Web Development
+
+            <div class="skill-popup" id="webdev">
+                <h4>Web Development</h4>
+                <p>
+                    Responsive websites, portfolio design,
+                    HTML/CSS styling, JavaScript interactions,
+                    and full front-end project development.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- AI & ML -->
+        <div class="skill-card" onclick="toggleSkillPopup('ai&machinelearning')">
+
+            AI & Machine Learning
+
+            <div class="skill-popup" id="ai&machinelearning">
+                <h4>AI & Machine Learning</h4>
+                <p>
+                Classifier evaluation, error analysis, AI-powered automation insights, AI in games    
+                </p>
+            </div>
+        </div>
+
+        <!--Game Development -->
+        <div class="skill-card" onclick="toggleSkillPopup('gamedevelopment')">
+
+            Game Development
+
+            <div class="skill-popup" id="gamedevelopment">
+                <h4>Game Development</h4>
+                <p>
+                Game logic, AI behavior design, basic 2D/3D game mechanics, interactive gameplay
+                </p>
+            </div>
+        </div>
+
+        <!--Tools & Technologies-->
+        <div class="skill-card" onclick="toggleSkillPopup('tools&technologies')">
+
+            Tools & Technologies
+
+            <div class="skill-popup" id="tools&technologies">
+                <h4>Tools & Technologies</h4>
+                <p>
+                VS Code, Live Server, GitHub, Weka, PDF & image integration for web projects
+                </p>
+            </div>
+        </div>
+        
+    </div>
+
+</section>
+<!-- =========================
+        PROJECTS SECTION
+========================= -->
+<section id="projects" class="projects">
+
+    <h2>MY WORKS</h2>
+
+    <div class="accordion">
+
+        <!-- PROJECT 1 -->
+        <button class="accordion-btn">Enactus FoodShare</button>
+        <div class="accordion-content">
+            <p>
+                Social innovation and entrepreneurship project focused on
+                food sharing and kitchen management solutions.
+            </p>
+            <a href="projects/enactus/Enactus FoodShare — Kitchen Management.html"
+               target="_blank"
+               class="project-btn">
+                View Project
+            </a>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <button class="accordion-btn">Explore 360</button>
+        <div class="accordion-content">
+            <p>
+                This website aims to guide tourists exploring Wolfville by providing extensive information and easy access to essential services.
+            </p>
+            <a href="projects/explore_360/explore_360/Front-end/home.html"
+               target="_blank"
+               class="project-btn">
+                View Project
+            </a>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <button class="accordion-btn">RoomyGo</button>
+        <div class="accordion-content">
+            <p>
+                Student accommodation platform with frontend and backend.
+            </p>
+            <a href="projects/RoomyGo/index.html"
+               target="_blank"
+               class="project-btn">
+                View Project
+            </a>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <button class="accordion-btn">Chapel Works</button>
+        <div class="accordion-content">
+
+            <p>
+                research and creative design projects.
+            </p>
+
+            <ul>
+                <li>
+                    <a href="projects/chapel/bahai_faith/Baha'i faith 2.pdf" target="_blank">
+                        Baha'i Faith Poster
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects/chapel/captain_leonard_parkinson/Copy of Captain Leonard Parkinson Final Poster For JCANS.pdf"
+                       target="_blank">
+                        Captain Leonard Parkinson Poster
+                    </a>
+                </li>
+
+                <li>
+                    <a href="projects/chapel/george_symonds/George Symonds.pdf" target="_blank">
+                        George Symonds Poster
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+        SLIDER SECTION
+========================= -->
+<section class="slider-section">
+
+    <h2>As Seen In</h2>
+
+    <div class="slider-wrapper">
+
+        <div class="slider-track">
+
+            <!-- IMAGES -->
+            <img src="1.png">
+            <img src="2.png">
+            <img src="3.png">
+            <img src="4.png">
+            <img src="5.png">
+            <img src="6.png">
+            <img src="7.png">
+            <img src="8.png">
+            <img src="9.png">
+            <img src="11.png">
+            <img src="12.png">
+            <img src="13.png">
+            <img src="14.png">
+            <img src="15.png">
+            <img src="1.png">
+
+            
+            <img src="1.png">
+            <img src="2.png">
+            <img src="3.png">
+            <img src="4.png">
+            <img src="5.png">
+            <img src="6.png">
+            <img src="7.png">
+            <img src="8.png">
+            <img src="9.png">
+            <img src="11.png">
+            <img src="12.png">
+            <img src="13.png">
+            <img src="14.png">
+            <img src="15.png">
+            <img src="2.png">
+
+            <img src="1.png">
+            <img src="2.png">
+            <img src="3.png">
+            <img src="4.png">
+            <img src="5.png">
+            <img src="6.png">
+            <img src="7.png">
+            <img src="8.png">
+            <img src="9.png">
+            <img src="11.png">
+            <img src="12.png">
+            <img src="13.png">
+            <img src="14.png">
+            <img src="15.png">
+            <img src="3.png">
+            
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+        UNIVERSITY SECTION
+========================= -->
+<section class="university">
+
+    <div class="university-content">
+
+        <h2>Academic Journey</h2>
+
+        <p>
+            Pursuing Computer Science with focus on software engineering,
+            AI, and modern web development.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================
+        FOOTER SECTION
+========================= -->
+<footer>
+
+    <div class="footer-logo">SHEKIN</div>
+
+    <!-- SOCIAL LINKS -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/shekin_juno?igsh=cWhqeGx0bzhneXo4" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/shekin-david-raj-b998613ab?" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/Shekin2005/Shekin" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+
+    <!-- FOOTER NAV LINKS -->
+    <div class="footer-links">
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+        </div>
+
+        <div>
+            <a href="#projects">Projects</a>
+            <a href="#" onclick="openContact()">Contact</a>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 Shekin David Raj | English
+    </div>
+
+</footer>
+
+<!-- =========================
+        CONTACT PANEL
+========================= -->
+<div class="contact-panel" id="contactPanel">
+
+    <div class="contact-header">
+
+        <h2>Contact Us</h2>
+
+        <span class="contact-close" onclick="closeContact()">
+            &times;
+        </span>
+
+    </div>
+
+    <div class="contact-content">
+
+        <h3>Phone</h3>
+        <p>+1 902 670 3768</p>
+        <p>Monday - Saturday from 10 AM to 10 PM (EST).</p>
+        <p>Sunday from 10 AM to 9 PM (EST).</p>
+
+        <h3>Get in more Contact</h3>
+        <p> Email: <a href="mailto:0306446d@acadiau.ca"> 0306446d@acadiau.ca </a>
+        <p> GitHub: <a href="https://github.com/Shekin2005/Shekin"> GitHub</a></p>
+
+
+    </div>
+
+</div>
+
+<!-- MAIN JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
